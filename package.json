@@ -1,0 +1,15 @@
+{
+  "name": "@scola/api-codec-form-data",
+  "version": "0.0.0",
+  "description": "Form Data Codec",
+  "repository": "github:scola84/node-api-codec-form-data",
+  "author": "M.C. van den Boogaart <scola@kvdb.name>",
+  "license": "MIT",
+  "main": "index.js",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.9.0"
+  },
+  "dependencies": {
+    "busboy": "^0.2.13"
+  }
+}
