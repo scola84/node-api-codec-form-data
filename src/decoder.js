@@ -1,7 +1,7 @@
-const stream = require('stream');
-const Busboy = require('busboy');
+import { Transform } from 'stream';
+import Busboy from 'busboy';
 
-class FormDataDecoder extends stream.Transform {
+export default class FormDataDecoder extends Transform {
   constructor(options, request) {
     super({
       objectMode: true
@@ -45,5 +45,3 @@ class FormDataDecoder extends stream.Transform {
     callback();
   }
 }
-
-module.exports = FormDataDecoder;
