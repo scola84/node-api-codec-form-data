@@ -9,20 +9,20 @@ export default class FormDataDecoder extends Transform {
 
     const result = {};
 
-    this.decoder = new Busboy(Object.assign({
+    this._decoder = new Busboy(Object.assign({
       headers: request.headers
     }, options));
 
-    this.decoder.once('error', (error) => {
-      this.decoder.removeAllListeners();
+    this._decoder.once('error', (error) => {
+      this._decoder.removeAllListeners();
       this.emit('error', error);
     });
 
-    this.decoder.on('field', (name, value) => {
+    this._decoder.on('field', (name, value) => {
       result[name] = value;
     });
 
-    this.decoder.on('file', (name, fileStream, fileName,
+    this._decoder.on('file', (name, fileStream, fileName,
       encoding, mimeType) => {
 
       fileStream.emit('end');
@@ -34,14 +34,14 @@ export default class FormDataDecoder extends Transform {
       };
     });
 
-    this.decoder.once('finish', () => {
-      this.decoder.removeAllListeners();
+    this._decoder.once('finish', () => {
+      this._decoder.removeAllListeners();
       this.push(result);
     });
   }
 
   _transform(chunk, encoding, callback) {
-    this.decoder.write(chunk);
+    this._decoder.write(chunk);
     callback();
   }
 }
