@@ -10,7 +10,7 @@ export default class FormDataDecoder extends Transform {
     const result = {};
 
     this._decoder = new Busboy(Object.assign({
-      headers: request.headers
+      headers: request.header()
     }, options));
 
     this._decoder.once('error', (error) => {
