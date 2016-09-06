@@ -11,7 +11,7 @@
     "busboy": "^0.2.13"
   },
   "devDependencies": {
-    "rollup": "^0.26.3"
+    "rollup": "^0.34.13"
   },
   "scripts": {
     "build": "rollup -i index.js -o ./dist/api-codec-form-data.js -f cjs"
