@@ -3,7 +3,8 @@ const type = 'multipart/form-data';
 import { default as Decoder } from './src/decoder';
 
 export const codec = {
-  Decoder
+  Decoder,
+  type
 };
 
 export function decoder(options) {
