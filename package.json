@@ -1,6 +1,6 @@
 {
   "name": "@scola/api-codec-form-data",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Form Data Codec",
   "repository": "github:scola84/node-api-codec-form-data",
   "author": "M.C. van den Boogaart <scola@kvdb.name>",
