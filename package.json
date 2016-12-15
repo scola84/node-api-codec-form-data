@@ -9,18 +9,5 @@
   "jsnext:main": "index.js",
   "dependencies": {
     "busboy": "^0.2.13"
-  },
-  "devDependencies": {
-    "rollup": "^0.36.1",
-    "rollup-plugin-buble": "^0.14.0",
-    "uglify-js": "^2.7.3"
-  },
-  "scripts": {
-    "build": "npm run cleanup && npm run rollup",
-    "build:min": "npm run build && npm run min",
-    "cleanup": "rm -rf dist",
-    "min": "uglifyjs dist/api-codec-form-data.js -m -o dist/api-codec-form-data.min.js",
-    "prepublish": "npm run build:min",
-    "rollup": "rollup -c"
   }
 }
